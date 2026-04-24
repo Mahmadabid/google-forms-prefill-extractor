@@ -14,10 +14,7 @@ const AUTOMATION_PROFILE = path.join(__dirname, ".chrome-automation");
 const dir = path.join(__dirname, "output");
 const OUTPUT_FILE = path.join(dir, "form-fields.json");
 
-// Ensure directory exists
-if (!fs.existsSync(dir)) {
-  fs.mkdirSync(dir, { recursive: true });
-}
+if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 
 function askForEnter(msg) {
   return new Promise(resolve => {
@@ -61,9 +58,9 @@ function findChrome() {
 
   const fields = await page.evaluate(() => {
     const typeMap = {
-      0: "Short answer", 1: "Paragraph", 2: "Multiple choice",
-      3: "Dropdown", 4: "Checkboxes", 5: "Linear scale",
-      7: "Grid", 8: "Date", 9: "Time",
+      0: "Short answer", 1: "Paragraph",       2: "Multiple choice",
+      3: "Dropdown",     4: "Checkboxes",       5: "Linear scale",
+      7: "Grid",         8: "Date",             9: "Time",
       10: "File upload",
     };
 
@@ -74,21 +71,23 @@ function findChrome() {
       .filter(q => Array.isArray(q) && q[4]?.[0]?.[0] !== undefined)
       .map(q => {
         const entryBlock = q[4][0];
-        const typeNum = q[3];
+        const typeNum    = q[3];
+
         const field = {
-          label: q[1] ?? "",
-          entry: `entry.${entryBlock[0]}`,
-          type: typeMap[typeNum] ?? `Unknown (${typeNum})`,
+          label:       q[1] ?? "",
+          entry:       `entry.${entryBlock[0]}`,
+          type:        typeMap[typeNum] ?? `Unknown (${typeNum})`,
+          required:    entryBlock[2] === 1,   // 1 = required, 0 = optional
           description: q[2] ?? "",
         };
 
-        // Options: present for multiple choice, dropdown, checkboxes, linear scale, grid
+        // Options for multiple choice, dropdown, checkboxes, linear scale, grid
         const rawOptions = entryBlock[1];
         if (Array.isArray(rawOptions)) {
-          field.options = rawOptions.map(o => o[0]); // each option's label is at index 0
+          field.options = rawOptions.map(o => o[0]);
         }
 
-        // Linear scale: min/max labels at entryBlock[3]
+        // Linear scale min/max labels
         if (typeNum === 5 && Array.isArray(entryBlock[3])) {
           field.scaleMin = entryBlock[3][0] ?? null;
           field.scaleMax = entryBlock[3][1] ?? null;

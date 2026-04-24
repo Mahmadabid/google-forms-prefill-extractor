@@ -26,7 +26,7 @@ npm install
 node script.js
 ```
 
-The first run may open Chrome and prompt you to sign in to Google. If that happens, sign in and press Enter in the terminal when the form is visible.
+The first run may open Chrome and prompt you to sign in to Google. If that happens, ```sign in and press Enter in the terminal``` when the form is visible.
 
 You can also pass a custom form URL and an optional wait timeout in seconds:
 

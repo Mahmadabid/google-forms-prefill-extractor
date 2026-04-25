@@ -1,14 +1,30 @@
 {
-  "name": "prefill-extractor",
+  "name": "google-forms-prefill-extractor",
   "version": "1.0.0",
-  "description": "",
+  "description": "Extracts prefilled data from Google Forms using Puppeteer",
   "license": "ISC",
-  "author": "",
+  "author": "Muhammad Ahmad",
   "type": "commonjs",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node script.js",
+    "test": "echo \"No tests specified\""
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mahmadabid/google-forms-prefill-extractor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mahmadabid/google-forms-prefill-extractor/issues"
+  },
+  "homepage": "https://github.com/Mahmadabid/google-forms-prefill-extractor#readme",
+  "keywords": [
+    "google-forms",
+    "puppeteer",
+    "automation",
+    "scraping",
+    "prefill"
+  ],
   "dependencies": {
     "puppeteer-core": "^24.42.0"
   }

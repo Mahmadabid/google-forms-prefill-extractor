@@ -1,6 +1,6 @@
 # google-forms-field-extractor
 
-Browser automation toolkit for Google Forms — extract form fields, entry IDs, and question types. No API keys required.
+Browser automation toolkit for Google Forms, extract form fields, entry IDs, and question types. No API keys required.
 
 ## What it does
 

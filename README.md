@@ -1,3 +1,56 @@
+# 🚨 Project Moved — New Version Available
+
+This project has been completely rebuilt as a modern **Electron + TypeScript application with a full UI**.
+
+---
+
+## 👉 New Project Location
+
+🚀 **New Repository (Recommended):**  
+https://github.com/Mahmadabid/vibed-puppet
+
+---
+
+## ✨ What’s New
+
+The new version includes:
+
+- 🖥️ Full desktop UI (Electron app)
+- ⚡ Improved performance and architecture
+- 🔧 TypeScript-based codebase (more stable & maintainable)
+- 📦 Better project structure and scalability
+- 🧠 Improved user experience compared to the script-based version
+
+---
+
+## ⚠️ Important Notice
+
+- This repository is now considered **legacy**
+- No new features will be added here
+- Only critical fixes (if any) will be applied
+- Please migrate to the new Electron application for continued updates
+
+---
+
+## 🔄 Migration
+
+If you were using this repository:
+
+👉 Simply switch to the new app:  
+https://github.com/Mahmadabid/vibed-puppet
+
+No manual migration is required in most cases.
+
+---
+
+## 📌 Recommendation
+
+For the best experience and future updates, please use the new Electron application.
+
+---
+
+Thank you for using this project 🙌
+
 # google-forms-field-extractor
 
 Browser automation toolkit for Google Forms, extract form fields, entry IDs, and question types. No API keys required.
